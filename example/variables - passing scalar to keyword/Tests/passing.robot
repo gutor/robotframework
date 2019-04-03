@@ -6,9 +6,7 @@ Library  Selenium2Library
 
 *** Test Cases ***
 User can search for products
-    # Here we pass variable input data to a user-defined keyword
-    # Try it: Change the URL and/or browser input values (ie, chrome, firefox, etc.)
-    Begin Web Test  http://www.amazon.com  ie
+    Begin Web Test  http://www.amazon.com  gc
 
 *** Keywords ***
 Begin Web Test

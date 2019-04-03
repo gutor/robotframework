@@ -8,6 +8,17 @@ Library         DateTime
 Library         HttpLibrary.HTTP
 
 *** Keywords ***
+Open Chrome In Headless Mode
+  [Arguments]  ${login_url}
+  [Documentation]  Open Chrome browser in headless mode, when run with this keyword there will be no Chrome screen display.
+  ${chrome_options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+  Call Method  ${chrome_options}  add_argument  --start-maximized
+  Call Method  ${chrome_options}  add_argument  --headless
+  Call Method  ${chrome_options}  add_argument  --disable-gpu
+  Call Method  ${chrome_options}  add_argument  --window-size\=1280,1024
+  Create WebDriver  Chrome  chrome_options=${chrome_options}
+  Go To  ${login_url}
+
 Prepare Request Json
   [Documentation]  Replace JSON template with input value.
   [Arguments]  ${json_template_file}  ${replace_dict}
@@ -64,3 +75,4 @@ Get DTaaS Error Log
   #  log  ${dtaas_log}
   ${format_log} =  evaluate  '\\n'.join(${dtaas_subscriber_log})
   create file  C:\\temp\\dtaas_error.log  ${format_log}${\n}${\n}Check full log at Kibana:${\n}|${\n}|${\n}v${\n}${\n}"${kibana_link}"
+

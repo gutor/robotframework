@@ -1,0 +1,2 @@
+*** Settings ***
+Documentation   These are some web test

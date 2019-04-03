@@ -1,0 +1,8 @@
+<TestCases>
+	<TestCase id="1" name="test case 1">Validate user loging</TestCase>
+	<TestCase id="2" name="test case 2">Invalid user login</TestCase>
+	<TestCase id="3" name="test case 3">Admin user login</TestCase>
+	<TestCase id="4" name="test case 4">Dashboard verification</TestCase>
+	<TestCase id="5" name="test case 5">Setting verification</TestCase>
+	<TestCase id="6" name="test case 6">Logout</TestCase>
+</TestCases>
